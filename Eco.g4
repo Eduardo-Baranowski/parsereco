@@ -1,6 +1,9 @@
 grammar Eco;
 abertura : lance* EOF ;
-lance : NUMBER '.' 'b4' ID+ ;
-NUMBER : [0-9]+ ;
-ID : [a-z]+ ;
+
+lance: lance (L* '.' N+ T* ) lance | (L* '.' N+ T* ) lance | (L* '.' N+ T* ) lance | (L* '.' N+ T* );
+N: [a-hA-Z]+;
+T: [1-8]+;
+L: [0-9]+;
+
 WS : [ \t\r\n]+ -> skip ;
