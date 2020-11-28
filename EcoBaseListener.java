@@ -15,25 +15,25 @@ public class EcoBaseListener implements EcoListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAbertura(EcoParser.AberturaContext ctx) { }
+	@Override public void enterEco(EcoParser.EcoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAbertura(EcoParser.AberturaContext ctx) { }
+	@Override public void exitEco(EcoParser.EcoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterLance(EcoParser.LanceContext ctx) { }
+	@Override public void enterJogada(EcoParser.JogadaContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitLance(EcoParser.LanceContext ctx) { }
+	@Override public void exitJogada(EcoParser.JogadaContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

@@ -1,9 +1,12 @@
 grammar Eco;
-abertura : lance* EOF ;
 
-lance: lance (L* '.' N+ T* ) lance | (L* '.' N+ T* ) lance | (L* '.' N+ T* ) lance | (L* '.' N+ T* );
-N: [a-hA-Z]+;
-T: [1-8]+;
-L: [0-9]+;
+eco: jogada+ EOF;
+
+jogada: C+'.' (P C)+ jogada | C+'.' (P C)+;
+
+P: N+;
+C: [1-8];
+
+N: [a-z];
 
 WS : [ \t\r\n]+ -> skip ;

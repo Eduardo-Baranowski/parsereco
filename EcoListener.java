@@ -7,23 +7,23 @@ import org.antlr.v4.runtime.tree.ParseTreeListener;
  */
 public interface EcoListener extends ParseTreeListener {
 	/**
-	 * Enter a parse tree produced by {@link EcoParser#abertura}.
+	 * Enter a parse tree produced by {@link EcoParser#eco}.
 	 * @param ctx the parse tree
 	 */
-	void enterAbertura(EcoParser.AberturaContext ctx);
+	void enterEco(EcoParser.EcoContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link EcoParser#abertura}.
+	 * Exit a parse tree produced by {@link EcoParser#eco}.
 	 * @param ctx the parse tree
 	 */
-	void exitAbertura(EcoParser.AberturaContext ctx);
+	void exitEco(EcoParser.EcoContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link EcoParser#lance}.
+	 * Enter a parse tree produced by {@link EcoParser#jogada}.
 	 * @param ctx the parse tree
 	 */
-	void enterLance(EcoParser.LanceContext ctx);
+	void enterJogada(EcoParser.JogadaContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link EcoParser#lance}.
+	 * Exit a parse tree produced by {@link EcoParser#jogada}.
 	 * @param ctx the parse tree
 	 */
-	void exitLance(EcoParser.LanceContext ctx);
+	void exitJogada(EcoParser.JogadaContext ctx);
 }
