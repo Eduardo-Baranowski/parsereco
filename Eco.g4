@@ -2,11 +2,11 @@ grammar Eco;
 
 eco: jogada+ EOF;
 
-jogada: C+'.' (P C)+ jogada | C+'.' (P C)+;
+jogada: ('0' | NUMC | '9')+'.' (PECA? COLUNA NUMC)+ jogada | ('0' | NUMC | '9')+'.' (PECA? COLUNA NUMC)+;
 
-P: N+;
-C: [1-8];
+NUMC: [1-8];
 
-N: [a-z];
+COLUNA: [a-h];
+PECA: ('K' | 'Q' | 'R' | 'B' | 'N')+;
 
 WS : [ \t\r\n]+ -> skip ;

@@ -16,7 +16,7 @@ public class EcoParser extends Parser {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		T__0=1, P=2, C=3, N=4, WS=5;
+		T__0=1, T__1=2, T__2=3, NUMC=4, COLUNA=5, PECA=6, WS=7;
 	public static final int
 		RULE_eco = 0, RULE_jogada = 1;
 	private static String[] makeRuleNames() {
@@ -28,13 +28,13 @@ public class EcoParser extends Parser {
 
 	private static String[] makeLiteralNames() {
 		return new String[] {
-			null, "'.'"
+			null, "'0'", "'9'", "'.'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
-			null, null, "P", "C", "N", "WS"
+			null, null, null, null, "NUMC", "COLUNA", "PECA", "WS"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -130,7 +130,7 @@ public class EcoParser extends Parser {
 				setState(7); 
 				_errHandler.sync(this);
 				_la = _input.LA(1);
-			} while ( _la==C );
+			} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__1) | (1L << NUMC))) != 0) );
 			setState(9);
 			match(EOF);
 			}
@@ -150,13 +150,17 @@ public class EcoParser extends Parser {
 		public JogadaContext jogada() {
 			return getRuleContext(JogadaContext.class,0);
 		}
-		public List<TerminalNode> C() { return getTokens(EcoParser.C); }
-		public TerminalNode C(int i) {
-			return getToken(EcoParser.C, i);
+		public List<TerminalNode> COLUNA() { return getTokens(EcoParser.COLUNA); }
+		public TerminalNode COLUNA(int i) {
+			return getToken(EcoParser.COLUNA, i);
 		}
-		public List<TerminalNode> P() { return getTokens(EcoParser.P); }
-		public TerminalNode P(int i) {
-			return getToken(EcoParser.P, i);
+		public List<TerminalNode> NUMC() { return getTokens(EcoParser.NUMC); }
+		public TerminalNode NUMC(int i) {
+			return getToken(EcoParser.NUMC, i);
+		}
+		public List<TerminalNode> PECA() { return getTokens(EcoParser.PECA); }
+		public TerminalNode PECA(int i) {
+			return getToken(EcoParser.PECA, i);
 		}
 		public JogadaContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -177,9 +181,9 @@ public class EcoParser extends Parser {
 		enterRule(_localctx, 2, RULE_jogada);
 		int _la;
 		try {
-			setState(36);
+			setState(42);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,5,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,7,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
@@ -190,70 +194,106 @@ public class EcoParser extends Parser {
 					{
 					{
 					setState(11);
-					match(C);
+					_la = _input.LA(1);
+					if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__1) | (1L << NUMC))) != 0)) ) {
+					_errHandler.recoverInline(this);
+					}
+					else {
+						if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+						_errHandler.reportMatch(this);
+						consume();
+					}
 					}
 					}
 					setState(14); 
 					_errHandler.sync(this);
 					_la = _input.LA(1);
-				} while ( _la==C );
+				} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__1) | (1L << NUMC))) != 0) );
 				setState(16);
-				match(T__0);
-				setState(19); 
+				match(T__2);
+				setState(22); 
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				do {
 					{
 					{
-					setState(17);
-					match(P);
 					setState(18);
-					match(C);
-					}
-					}
-					setState(21); 
 					_errHandler.sync(this);
 					_la = _input.LA(1);
-				} while ( _la==P );
-				setState(23);
+					if (_la==PECA) {
+						{
+						setState(17);
+						match(PECA);
+						}
+					}
+
+					setState(20);
+					match(COLUNA);
+					setState(21);
+					match(NUMC);
+					}
+					}
+					setState(24); 
+					_errHandler.sync(this);
+					_la = _input.LA(1);
+				} while ( _la==COLUNA || _la==PECA );
+				setState(26);
 				jogada();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(25); 
+				setState(28); 
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				do {
 					{
 					{
-					setState(24);
-					match(C);
+					setState(27);
+					_la = _input.LA(1);
+					if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__1) | (1L << NUMC))) != 0)) ) {
+					_errHandler.recoverInline(this);
+					}
+					else {
+						if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+						_errHandler.reportMatch(this);
+						consume();
 					}
 					}
-					setState(27); 
+					}
+					setState(30); 
 					_errHandler.sync(this);
 					_la = _input.LA(1);
-				} while ( _la==C );
-				setState(29);
-				match(T__0);
-				setState(32); 
+				} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__1) | (1L << NUMC))) != 0) );
+				setState(32);
+				match(T__2);
+				setState(38); 
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				do {
 					{
 					{
-					setState(30);
-					match(P);
-					setState(31);
-					match(C);
-					}
-					}
-					setState(34); 
+					setState(34);
 					_errHandler.sync(this);
 					_la = _input.LA(1);
-				} while ( _la==P );
+					if (_la==PECA) {
+						{
+						setState(33);
+						match(PECA);
+						}
+					}
+
+					setState(36);
+					match(COLUNA);
+					setState(37);
+					match(NUMC);
+					}
+					}
+					setState(40); 
+					_errHandler.sync(this);
+					_la = _input.LA(1);
+				} while ( _la==COLUNA || _la==PECA );
 				}
 				break;
 			}
@@ -270,18 +310,20 @@ public class EcoParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\7)\4\2\t\2\4\3\t"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\t/\4\2\t\2\4\3\t"+
 		"\3\3\2\6\2\b\n\2\r\2\16\2\t\3\2\3\2\3\3\6\3\17\n\3\r\3\16\3\20\3\3\3\3"+
-		"\3\3\6\3\26\n\3\r\3\16\3\27\3\3\3\3\6\3\34\n\3\r\3\16\3\35\3\3\3\3\3\3"+
-		"\6\3#\n\3\r\3\16\3$\5\3\'\n\3\3\3\2\2\4\2\4\2\2\2,\2\7\3\2\2\2\4&\3\2"+
-		"\2\2\6\b\5\4\3\2\7\6\3\2\2\2\b\t\3\2\2\2\t\7\3\2\2\2\t\n\3\2\2\2\n\13"+
-		"\3\2\2\2\13\f\7\2\2\3\f\3\3\2\2\2\r\17\7\5\2\2\16\r\3\2\2\2\17\20\3\2"+
-		"\2\2\20\16\3\2\2\2\20\21\3\2\2\2\21\22\3\2\2\2\22\25\7\3\2\2\23\24\7\4"+
-		"\2\2\24\26\7\5\2\2\25\23\3\2\2\2\26\27\3\2\2\2\27\25\3\2\2\2\27\30\3\2"+
-		"\2\2\30\31\3\2\2\2\31\'\5\4\3\2\32\34\7\5\2\2\33\32\3\2\2\2\34\35\3\2"+
-		"\2\2\35\33\3\2\2\2\35\36\3\2\2\2\36\37\3\2\2\2\37\"\7\3\2\2 !\7\4\2\2"+
-		"!#\7\5\2\2\" \3\2\2\2#$\3\2\2\2$\"\3\2\2\2$%\3\2\2\2%\'\3\2\2\2&\16\3"+
-		"\2\2\2&\33\3\2\2\2\'\5\3\2\2\2\b\t\20\27\35$&";
+		"\5\3\25\n\3\3\3\3\3\6\3\31\n\3\r\3\16\3\32\3\3\3\3\6\3\37\n\3\r\3\16\3"+
+		" \3\3\3\3\5\3%\n\3\3\3\3\3\6\3)\n\3\r\3\16\3*\5\3-\n\3\3\3\2\2\4\2\4\2"+
+		"\3\4\2\3\4\6\6\2\64\2\7\3\2\2\2\4,\3\2\2\2\6\b\5\4\3\2\7\6\3\2\2\2\b\t"+
+		"\3\2\2\2\t\7\3\2\2\2\t\n\3\2\2\2\n\13\3\2\2\2\13\f\7\2\2\3\f\3\3\2\2\2"+
+		"\r\17\t\2\2\2\16\r\3\2\2\2\17\20\3\2\2\2\20\16\3\2\2\2\20\21\3\2\2\2\21"+
+		"\22\3\2\2\2\22\30\7\5\2\2\23\25\7\b\2\2\24\23\3\2\2\2\24\25\3\2\2\2\25"+
+		"\26\3\2\2\2\26\27\7\7\2\2\27\31\7\6\2\2\30\24\3\2\2\2\31\32\3\2\2\2\32"+
+		"\30\3\2\2\2\32\33\3\2\2\2\33\34\3\2\2\2\34-\5\4\3\2\35\37\t\2\2\2\36\35"+
+		"\3\2\2\2\37 \3\2\2\2 \36\3\2\2\2 !\3\2\2\2!\"\3\2\2\2\"(\7\5\2\2#%\7\b"+
+		"\2\2$#\3\2\2\2$%\3\2\2\2%&\3\2\2\2&\'\7\7\2\2\')\7\6\2\2($\3\2\2\2)*\3"+
+		"\2\2\2*(\3\2\2\2*+\3\2\2\2+-\3\2\2\2,\16\3\2\2\2,\36\3\2\2\2-\5\3\2\2"+
+		"\2\n\t\20\24\32 $*,";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {
